@@ -1,15 +1,15 @@
 import uploadImage from '../lib/uploadImage.js'
 import { sticker } from '../lib/sticker.js'
 import MessageType from '@adiwajshing/baileys'
-const effects = ['jail', 'gay', 'glass', 'wasted' ,'triggered', 'lolice', 'simpcard', 'horny']
+let effects = [text]
 
 let handler = async (m, { conn, usedPrefix, text, command }) => {
-// let effect = text.trim().toLowerCase()
-// if (!effects.includes(effect)) throw `
+let effect = text.trim().toLowerCase()
+if (effects.includes('/n')) throw `
 
-// ┌─⊷ *EFFECTS*
-// ${effects.map(effect => `▢ ${effect}`).join('\n')}
-// └───────────
+┌─⊷ *EFFECTS*
+${effects.map(effect => `▢ ${effect}`).join('\n')}
+└───────────
 
 📌 *Example:* 
 ${usedPrefix + command} wasted 
