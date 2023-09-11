@@ -4,8 +4,8 @@ import MessageType from '@adiwajshing/baileys'
 const effects = ['jail', 'gay', 'glass', 'wasted' ,'triggered', 'lolice', 'simpcard', 'horny']
 
 let handler = async (m, { conn, usedPrefix, text, command }) => {
-let effect = text.trim().toLowerCase()
-if (!effects.includes(effect)) throw `
+// let effect = text.trim().toLowerCase()
+// if (!effects.includes(effect)) throw `
 
 // ┌─⊷ *EFFECTS*
 // ${effects.map(effect => `▢ ${effect}`).join('\n')}
