@@ -7,9 +7,9 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
 let effect = text.trim().toLowerCase()
 if (!effects.includes(effect)) throw `
 
-┌─⊷ *EFFECTS*
-${effects.map(effect => `▢ ${effect}`).join('\n')}
-└───────────
+// ┌─⊷ *EFFECTS*
+// ${effects.map(effect => `▢ ${effect}`).join('\n')}
+// └───────────
 
 📌 *Example:* 
 ${usedPrefix + command} wasted 
@@ -20,9 +20,7 @@ if (!mime) throw '✳️ Respond to an image'
 if (!/image\/(jpe?g|png)/.test(mime)) throw `✳️ Format not supported`
 let img = await q.download()
 let url = await uploadImage(img)
-let apiUrl = global.API('https://some-random-api.com/canvas/', encodeURIComponent(effect), {
-avatar: url
-})
+let apiUrl = global.API('https://api.memegen.link/images/custom/-/${text}.png?background=${url}')
 try {
 let stiker = await sticker(null, apiUrl, global.packname, global.author)
 conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
