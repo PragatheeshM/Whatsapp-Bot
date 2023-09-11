@@ -20,7 +20,8 @@ if (!mime) throw '✳️ Respond to an image'
 if (!/image\/(jpe?g|png)/.test(mime)) throw `✳️ Format not supported`
 let img = await q.download()
 let url = await uploadImage(img)
-let apiUrl = global.API('https://api.memegen.link/images/custom/-/${text}.png?background=${url}')
+let apiUrl = global.API('https://api.memegen.link/images/custom/-/${effects}.png')
+// let apiUrl = global.API('https://api.memegen.link/images/custom/-/${effects}.png?background=${url}')
 try {
 let stiker = await sticker(null, apiUrl, global.packname, global.author)
 conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
